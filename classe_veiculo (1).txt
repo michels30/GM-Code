@@ -1,0 +1,54 @@
+class Veiculo:
+    def __init__(self, marca, modelo, ano):
+        self.__marca = marca
+        self.__modelo = modelo
+        self.__ano = ano
+
+    def get_marca(self):
+        return self.__marca
+
+    def set_marca(self, marca):
+        self.__marca = marca
+
+    def get_modelo(self):
+        return self.__modelo
+
+    def set_modelo(self, modelo):
+        self.__modelo = modelo
+
+    def get_ano(self):
+        return self.__ano
+
+    def set_ano(self, ano):
+        self.__ano = ano
+
+    def detalhes_veiculo(self):
+        raise NotImplementedError("Este método deve ser sobrescrito pelas subclasses")
+
+class Carro(Veiculo):
+    def __init__(self, marca, modelo, ano, num_portas):
+        super().__init__(marca, modelo, ano)
+        self.__num_portas = num_portas
+
+    def get_num_portas(self):
+        return self.__num_portas
+
+    def set_num_portas(self, num_portas):
+        self.__num_portas = num_portas
+
+    def detalhes_veiculo(self):
+        return f"Carro: {self.get_marca()} {self.get_modelo()} ({self.get_ano()}), {self.__num_portas} portas"
+
+class Moto(Veiculo):
+    def __init__(self, marca, modelo, ano, tipo):
+        super().__init__(marca, modelo, ano)
+        self.__tipo = tipo
+
+    def get_tipo(self):
+        return self.__tipo
+
+    def set_tipo(self, tipo):
+        self.__tipo = tipo
+
+    def detalhes_veiculo(self):
+        return f"Moto: {self.get_marca()} {self.get_modelo()} ({self.get_ano()}), Tipo: {self.__tipo}"
