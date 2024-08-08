@@ -33,7 +33,7 @@ class Carro(Veiculo):
     def get_num_portas(self):
         return self.__num_portas
 
-    def set_num_portas(self, num_portas):
+    def set_num_portas(self, num_portas)
         self.__num_portas = num_portas
 
     def detalhes_veiculo(self):
